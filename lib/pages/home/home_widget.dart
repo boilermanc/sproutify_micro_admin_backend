@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/side_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -37,21 +36,17 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiResultpg0 = await FetchUsersFarmIDCall.call(
+      _model.apiResultjwm = await FetchUsersFarmIDCall.call(
         userID: currentUserUid,
       );
 
-      if ((_model.apiResultpg0?.succeeded ?? true)) {
-        FFAppState().firstName = FetchUsersFarmIDCall.firstName(
-          (_model.apiResultpg0?.jsonBody ?? ''),
-        )!;
-        FFAppState().farmName = FetchUsersFarmIDCall.farmName(
-          (_model.apiResultpg0?.jsonBody ?? ''),
-        )!;
-        FFAppState().farmUUID = FetchUsersFarmIDCall.farmUUID(
-          (_model.apiResultpg0?.jsonBody ?? ''),
-        )!;
-        safeSetState(() {});
+      if ((_model.apiResultjwm?.succeeded ?? true)) {
+        FFAppState().farmUUID = valueOrDefault<String>(
+          FetchUsersFarmIDCall.farmUUID(
+            (_model.apiResultjwm?.jsonBody ?? ''),
+          ),
+          'Farm UUID',
+        );
       }
     });
 
@@ -69,12 +64,9 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return FutureBuilder<List<ProfileRow>>(
-      future: ProfileTable().querySingleRow(
-        queryFn: (q) => q.eqOrNull(
-          'id',
-          currentUserUid,
-        ),
+    return FutureBuilder<ApiCallResponse>(
+      future: FetchUsersFarmIDCall.call(
+        userID: currentUserUid,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -94,10 +86,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             ),
           );
         }
-        List<ProfileRow> homeProfileRowList = snapshot.data!;
-
-        final homeProfileRow =
-            homeProfileRowList.isNotEmpty ? homeProfileRowList.first : null;
+        final homeFetchUsersFarmIDResponse = snapshot.data!;
 
         return GestureDetector(
           onTap: () {
@@ -183,7 +172,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 16.0, 0.0, 0.0),
                                     child: Text(
-                                      FFAppState().firstName,
+                                      valueOrDefault<String>(
+                                        FetchUsersFarmIDCall.firstName(
+                                          homeFetchUsersFarmIDResponse.jsonBody,
+                                        ),
+                                        'Happy Grower!',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
@@ -213,7 +207,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         100.0, 16.0, 0.0, 0.0),
                                     child: Text(
-                                      FFAppState().farmName,
+                                      valueOrDefault<String>(
+                                        FetchUsersFarmIDCall.farmName(
+                                          homeFetchUsersFarmIDResponse.jsonBody,
+                                        ),
+                                        'Happy Farm',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
                                           .override(
@@ -240,64 +239,6 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ),
                                   ),
                                 ],
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'bu74hivf' /* Hope you have a wonderful day! */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  FFAppState().farmUUID,
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        font: GoogleFonts.plusJakartaSans(
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .fontStyle,
-                                        ),
-                                        letterSpacing: 0.0,
-                                        fontWeight: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontWeight,
-                                        fontStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .fontStyle,
-                                      ),
-                                ),
                               ),
                               if (responsiveVisibility(
                                 context: context,
@@ -580,7 +521,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'ss0v6c7z' /* Batches List */,
+                                                                      'ss0v6c7z' /* Batch List */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -707,6 +648,258 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             context)
                                                                         .getText(
                                                                       'nq3g33zn' /* Add Batch */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.plusJakartaSans(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              1.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .arrow_forward_ios,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        size:
+                                                                            20.0,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 1.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        HapticFeedback
+                                                            .lightImpact();
+
+                                                        context.pushNamed(
+                                                            ViewRecipesWidget
+                                                                .routeName);
+                                                      },
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 70.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              blurRadius: 0.0,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .alternate,
+                                                              offset: Offset(
+                                                                0.0,
+                                                                1.0,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      0.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      'wqid0wwd' /* Recipes */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.plusJakartaSans(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              1.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .arrow_forward_ios,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                        size:
+                                                                            20.0,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 1.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        HapticFeedback
+                                                            .lightImpact();
+
+                                                        context.pushNamed(
+                                                            AddRecipeWidget
+                                                                .routeName);
+                                                      },
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 70.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              blurRadius: 0.0,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .alternate,
+                                                              offset: Offset(
+                                                                0.0,
+                                                                1.0,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      0.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    FFLocalizations.of(
+                                                                            context)
+                                                                        .getText(
+                                                                      '5nbwl46l' /* Add Recipe */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)

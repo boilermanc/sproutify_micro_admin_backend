@@ -166,7 +166,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'has requested access.',
       'es': '',
     },
-    'ytfe9gjn': {
+    'obdwngjb': {
       'en': 'Activate',
       'es': '',
     },
@@ -276,16 +276,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Tray ID:',
       'es': '',
     },
+    'wsr2gw0q': {
+      'en': '429242424',
+      'es': '',
+    },
     'le77farr': {
       'en': 'Variety:',
+      'es': '',
+    },
+    'no9zf01n': {
+      'en': 'Hello World',
       'es': '',
     },
     '78vdagzs': {
       'en': 'Date Sown: ',
       'es': '',
     },
+    'imyscwne': {
+      'en': 'Mon. July 3rd',
+      'es': '',
+    },
     'upi16d6h': {
       'en': 'Harvest Date:',
+      'es': '',
+    },
+    '8i5ddp84': {
+      'en': 'Mon. July 3rd',
+      'es': '',
+    },
+    'e0udfg1o': {
+      'en': '2.5 lbs',
+      'es': '',
+    },
+    'o32tkwaz': {
+      'en': 'Accepted',
       'es': '',
     },
     '1don1nvr': {
@@ -346,12 +370,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Login1
   {
-    'sv114l1i': {
-      'en': 'Sproutify Micro',
-      'es': '',
-    },
     'b8nyca5z': {
-      'en': 'Welcome Back',
+      'en': 'Welcome!',
       'es': '',
     },
     'qzkbhx20': {
@@ -381,10 +401,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Welcome',
       'es': '',
     },
-    'bu74hivf': {
-      'en': 'Hope you have a wonderful day!',
-      'es': '',
-    },
     'zmvscu81': {
       'en': 'Manage Micros',
       'es': '',
@@ -394,11 +410,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'ss0v6c7z': {
-      'en': 'Batches List',
+      'en': 'Batch List',
       'es': '',
     },
     'nq3g33zn': {
       'en': 'Add Batch',
+      'es': '',
+    },
+    'wqid0wwd': {
+      'en': 'Recipes',
+      'es': '',
+    },
+    '5nbwl46l': {
+      'en': 'Add Recipe',
       'es': '',
     },
     'pcrmna0s': {
@@ -438,6 +462,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wdprn4co': {
       'en': 'Use this page to manage your vendors.',
+      'es': '',
+    },
+    'exwgi4my': {
+      'en': 'Name',
+      'es': '',
+    },
+    'f18rcue0': {
+      'en': 'Phone',
+      'es': '',
+    },
+    'mpl6vz6p': {
+      'en': 'Email',
+      'es': '',
+    },
+    '6pgd3prx': {
+      'en': 'Website',
+      'es': '',
+    },
+    '1xrmva5v': {
+      'en': 'Notes',
       'es': '',
     },
     'sqyz6rzt': {
@@ -517,6 +561,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '6w92xjp3': {
       'en':
           'Use this page to manage the microgreens you allow in your catalog.',
+      'es': '',
+    },
+    'd99yomue': {
+      'en': 'Expanded body text',
       'es': '',
     },
     'adwe0ok6': {
@@ -1063,13 +1111,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Use this page to manage your batches.',
       'es': '',
     },
-    'm31jq9gu': {
-      'en': 'Purchase Date:',
+    '1g4ug68p': {
+      'en': 'Variety',
       'es': '',
     },
-    'px4hlocq': {
-      'en':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    'g7u1w2cu': {
+      'en': 'Lot Number',
+      'es': '',
+    },
+    'y75dl51n': {
+      'en': 'Date Purchased',
+      'es': '',
+    },
+    'lhmtukpc': {
+      'en': 'Germ Date',
+      'es': '',
+    },
+    '3er2l108': {
+      'en': 'Quantity',
+      'es': '',
+    },
+    'ie2mot9q': {
+      'en': 'Status',
       'es': '',
     },
     'ebf9ezlt': {
@@ -1079,10 +1142,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createFarmManager1
   {
-    'g8e8co4z': {
-      'en': 'Sproutify Micro',
-      'es': '',
-    },
     'dbz1qhs7': {
       'en': 'Let\'s Get Started',
       'es': '',
@@ -1114,10 +1173,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // addProfileInfo
   {
-    'rp2gjhje': {
-      'en': 'Sproutify Micro',
-      'es': '',
-    },
     'w2e78yyx': {
       'en': 'Lets Create Your Profile',
       'es': '',
@@ -1157,10 +1212,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // addAFarm
   {
-    'bj1sywm1': {
-      'en': 'Sproutify Micro',
-      'es': '',
-    },
     '388maygu': {
       'en': 'Tell About the Farm',
       'es': '',
@@ -1187,6 +1238,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6fwb1vfe': {
       'en': 'Postal Code',
+      'es': '',
+    },
+    '0b1t9hjq': {
+      'en': 'Country',
       'es': '',
     },
     '03nhtmsj': {
@@ -1221,6 +1276,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '11+',
       'es': '',
     },
+    'yxgm1jln': {
+      'en': 'Prefered Unit',
+      'es': '',
+    },
+    'c4uv4j5f': {
+      'en': 'Search for an item...',
+      'es': '',
+    },
+    'mpeyrn8q': {
+      'en': 'Metric',
+      'es': '',
+    },
+    'l6rnr3e1': {
+      'en': 'Imperial',
+      'es': '',
+    },
     'daheohxf': {
       'en': 'Create Farm',
       'es': '',
@@ -1232,10 +1303,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // finalWelcome
   {
-    '9vhpm1eq': {
-      'en': 'Sproutify Micro',
-      'es': '',
-    },
     'xnswt9rk': {
       'en': 'Congratulations!',
       'es': '',
@@ -1257,12 +1324,409 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // sideNav
+  // addRecipe
   {
-    '40mbqd44': {
-      'en': 'Sproutify Micro',
+    'b7wyxwwe': {
+      'en': 'Add Micro Recipe',
       'es': '',
     },
+    '4rawstvz': {
+      'en': 'Use this page to add a Micro Recipe',
+      'es': '',
+    },
+    'bfd7rlyd': {
+      'en': 'Select Variety',
+      'es': '',
+    },
+    '76i09q1g': {
+      'en': 'Search for an item...',
+      'es': '',
+    },
+    'dn9wmg2a': {
+      'en': 'Option 1',
+      'es': '',
+    },
+    'tflz733x': {
+      'en': 'Is Active',
+      'es': '',
+    },
+    '8wwbmoee': {
+      'en': 'Recipe Name',
+      'es': '',
+    },
+    'iojynb9s': {
+      'en': 'Description',
+      'es': '',
+    },
+    'edzjxwwa': {
+      'en': 'Notes:',
+      'es': '',
+    },
+    'uqaweed6': {
+      'en': 'Create Recipe',
+      'es': '',
+    },
+    's7p4uqex': {
+      'en': '__',
+      'es': '',
+    },
+  },
+  // addStepsToRecipe
+  {
+    '3jrtbbit': {
+      'en': 'Add Steps to Your Micro Recipe',
+      'es': '',
+    },
+    '07vuqa5a': {
+      'en': 'Use this page to add steps to your Micro Recipe',
+      'es': '',
+    },
+    'qjfriu7i': {
+      'en': 'Step Name',
+      'es': '',
+    },
+    's9jhq417': {
+      'en': 'Sequence',
+      'es': '',
+    },
+    '74rlyazt': {
+      'en': 'Duration:',
+      'es': '',
+    },
+    '8gfzqzg1': {
+      'en': 'Enter Time',
+      'es': '',
+    },
+    'lkyfho5q': {
+      'en': 'Select Unit...',
+      'es': '',
+    },
+    'l9m9cvji': {
+      'en': 'Search for an item...',
+      'es': '',
+    },
+    '952hvy40': {
+      'en': 'Days',
+      'es': '',
+    },
+    '8ixk7i0x': {
+      'en': 'Hours',
+      'es': '',
+    },
+    '2goijhqf': {
+      'en': 'Select Step...',
+      'es': '',
+    },
+    'hbmrqvuw': {
+      'en': 'Search for an item...',
+      'es': '',
+    },
+    'lqj8mi3s': {
+      'en': 'Option 1',
+      'es': '',
+    },
+    'pyi5eocj': {
+      'en': 'Notes:',
+      'es': '',
+    },
+    '3tdu22ln': {
+      'en': 'Add Step',
+      'es': '',
+    },
+    '2pwpe9nc': {
+      'en': 'All Finished',
+      'es': '',
+    },
+    '7mgcvuqg': {
+      'en': 'Sequence',
+      'es': '',
+    },
+    '0b737vl2': {
+      'en': 'Step',
+      'es': '',
+    },
+    'itq5ubob': {
+      'en': 'Desciption',
+      'es': '',
+    },
+    'et6qypf1': {
+      'en': 'Duration',
+      'es': '',
+    },
+    '6ryz9ruv': {
+      'en': 'Unit',
+      'es': '',
+    },
+    'stobuo8s': {
+      'en': 'Notes',
+      'es': '',
+    },
+    'p7s49gwm': {
+      'en': '__',
+      'es': '',
+    },
+  },
+  // apiTest
+  {
+    '7yshetho': {
+      'en': 'Page Title',
+      'es': '',
+    },
+    'jwckzjm6': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // viewRecipes
+  {
+    'fl75o6oz': {
+      'en': 'Recipes',
+      'es': '',
+    },
+    'r1a4b2x5': {
+      'en': 'Below is a list of recipies.',
+      'es': '',
+    },
+    '5x4if74s': {
+      'en': 'Search all recipes...',
+      'es': '',
+    },
+    'idtfdsga': {
+      'en': 'All',
+      'es': '',
+    },
+    '67yfg0d1': {
+      'en': 'Owners',
+      'es': '',
+    },
+    'a1fwo8nv': {
+      'en': 'Editors',
+      'es': '',
+    },
+    '3t4arm1w': {
+      'en': 'Viewers',
+      'es': '',
+    },
+    '6ruwyet7': {
+      'en': 'All',
+      'es': '',
+    },
+    '73jeohx4': {
+      'en': 'All',
+      'es': '',
+    },
+    'vargfvcq': {
+      'en': 'Recipe ID',
+      'es': '',
+    },
+    'n2xapvru': {
+      'en': 'Recipe',
+      'es': '',
+    },
+    'nzo8lhdd': {
+      'en': 'Variety',
+      'es': '',
+    },
+    'hr3v5bfj': {
+      'en': 'Created Date',
+      'es': '',
+    },
+    '9kd1pfqz': {
+      'en': 'Created By',
+      'es': '',
+    },
+    'pxenje94': {
+      'en': 'Edit Header 6',
+      'es': '',
+    },
+    'j3bdi3ey': {
+      'en': 'Edit Column 6',
+      'es': '',
+    },
+    'gq989bc5': {
+      'en': 'Status',
+      'es': '',
+    },
+    'ofy1hqoj': {
+      'en': 'Edit',
+      'es': '',
+    },
+    'cjhd0q8z': {
+      'en': '__',
+      'es': '',
+    },
+  },
+  // viewSteps
+  {
+    'npl7uykf': {
+      'en': 'Recipes Steps',
+      'es': '',
+    },
+    'ohvwg62j': {
+      'en': 'Below are the steps for Recipe',
+      'es': '',
+    },
+    'faoat3g3': {
+      'en': 'Name',
+      'es': '',
+    },
+    'mooocaqx': {
+      'en': 'Last Active',
+      'es': '',
+    },
+    'eg0pmmjp': {
+      'en': 'Created',
+      'es': '',
+    },
+    'c1sdiphb': {
+      'en': 'Status',
+      'es': '',
+    },
+    'kr50vzrh': {
+      'en': '__',
+      'es': '',
+    },
+  },
+  // editSteps
+  {
+    '7p4qhk7x': {
+      'en': 'Edit Steps to Your Micro Recipe',
+      'es': '',
+    },
+    'oh0xiytu': {
+      'en': 'Use this page to edit steps to your Micro Recipe',
+      'es': '',
+    },
+    'k6loy1oa': {
+      'en': 'Step Name',
+      'es': '',
+    },
+    '01jkmnv4': {
+      'en': 'Sequence',
+      'es': '',
+    },
+    '5hqjncnl': {
+      'en': 'Duration:',
+      'es': '',
+    },
+    'uksi44vo': {
+      'en': 'Enter Time',
+      'es': '',
+    },
+    'bnofoub6': {
+      'en': 'Select Unit...',
+      'es': '',
+    },
+    '7pzwpgxp': {
+      'en': 'Search for an item...',
+      'es': '',
+    },
+    'mb0aspf5': {
+      'en': 'Days',
+      'es': '',
+    },
+    'sakzd37d': {
+      'en': 'Hours',
+      'es': '',
+    },
+    'hk5744nv': {
+      'en': 'Select Step...',
+      'es': '',
+    },
+    'eyxbg4cb': {
+      'en': 'Search for an item...',
+      'es': '',
+    },
+    'fkojd5ve': {
+      'en': 'Option 1',
+      'es': '',
+    },
+    'kle9sdsn': {
+      'en': 'Notes:',
+      'es': '',
+    },
+    'hqkjhddr': {
+      'en': 'Add Step',
+      'es': '',
+    },
+    's3ijburv': {
+      'en': 'All Finished',
+      'es': '',
+    },
+    'v8hn4hpn': {
+      'en': 'Sequence',
+      'es': '',
+    },
+    'k7d2k7p9': {
+      'en': 'Step',
+      'es': '',
+    },
+    'r2h2j6wg': {
+      'en': 'Description',
+      'es': '',
+    },
+    'lkpli972': {
+      'en': 'Duration',
+      'es': '',
+    },
+    '3usmi4sm': {
+      'en': 'Time Unit',
+      'es': '',
+    },
+    'gmqp0p5t': {
+      'en': 'Notes',
+      'es': '',
+    },
+    'b1ko5rno': {
+      'en': '__',
+      'es': '',
+    },
+  },
+  // testBatch
+  {
+    '0msbbes9': {
+      'en': 'Page Title',
+      'es': '',
+    },
+    'lq4dsp4u': {
+      'en': 'Micro Batches',
+      'es': '',
+    },
+    'yq8iat9z': {
+      'en': 'Use this page to manage your batches.',
+      'es': '',
+    },
+    '1kx491st': {
+      'en': 'Variety',
+      'es': '',
+    },
+    '50unw8wp': {
+      'en': 'Lot Number',
+      'es': '',
+    },
+    'k9xqtqzw': {
+      'en': 'Date Purchased',
+      'es': '',
+    },
+    'hsc3a0cv': {
+      'en': 'Germ Date',
+      'es': '',
+    },
+    'f62haxw8': {
+      'en': 'Quantity',
+      'es': '',
+    },
+    '6rvnv7ee': {
+      'en': 'Status',
+      'es': '',
+    },
+    'sjltdare': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // sideNav
+  {
     'vjc6t6s1': {
       'en': 'Platform Navigation',
       'es': '',
@@ -1305,6 +1769,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fsrwofko': {
       'en': 'Dark Mode',
+      'es': '',
+    },
+  },
+  // batchStatusDropdown
+  {
+    'a470ke0c': {
+      'en': 'Select...',
+      'es': '',
+    },
+    'ge2kzawu': {
+      'en': 'Search...',
+      'es': '',
+    },
+    'xft7dhd6': {
+      'en': 'New',
+      'es': '',
+    },
+    'h92zlcqj': {
+      'en': 'Active',
+      'es': '',
+    },
+    '1eo5ifym': {
+      'en': 'Used',
       'es': '',
     },
   },

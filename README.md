@@ -1,4 +1,4 @@
-# adminMicro
+# sproutifyMicroAdmin
 
 A new Flutter project.
 

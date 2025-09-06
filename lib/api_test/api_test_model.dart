@@ -1,17 +1,15 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'batch_is_active_widget.dart' show BatchIsActiveWidget;
+import 'dart:ui';
+import 'api_test_widget.dart' show ApiTestWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BatchIsActiveModel extends FlutterFlowModel<BatchIsActiveWidget> {
-  ///  State fields for stateful widgets in this component.
-
-  // State field(s) for Switch widget.
-  bool? switchValue;
-
+class ApiTestModel extends FlutterFlowModel<ApiTestWidget> {
   @override
   void initState(BuildContext context) {}
 

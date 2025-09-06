@@ -38,16 +38,22 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_navOpen', value);
   }
 
-  String _firstName = '';
-  String get firstName => _firstName;
-  set firstName(String value) {
-    _firstName = value;
-  }
-
   String _farmName = '';
   String get farmName => _farmName;
   set farmName(String value) {
     _farmName = value;
+  }
+
+  String _userID = '';
+  String get userID => _userID;
+  set userID(String value) {
+    _userID = value;
+  }
+
+  String _firstName = '';
+  String get firstName => _firstName;
+  set firstName(String value) {
+    _firstName = value;
   }
 
   String _farmUUID = '';
@@ -56,10 +62,16 @@ class FFAppState extends ChangeNotifier {
     _farmUUID = value;
   }
 
-  String _userID = '';
-  String get userID => _userID;
-  set userID(String value) {
-    _userID = value;
+  int _recipeID = 0;
+  int get recipeID => _recipeID;
+  set recipeID(int value) {
+    _recipeID = value;
+  }
+
+  bool _recipieActive = true;
+  bool get recipieActive => _recipieActive;
+  set recipieActive(bool value) {
+    _recipieActive = value;
   }
 }
 

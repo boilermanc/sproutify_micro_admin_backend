@@ -35,6 +35,10 @@ class AddAFarmModel extends FlutterFlowModel<AddAFarmWidget> {
   FocusNode? farmPostalFocusNode;
   TextEditingController? farmPostalTextController;
   String? Function(BuildContext, String?)? farmPostalTextControllerValidator;
+  // State field(s) for farmCountry widget.
+  FocusNode? farmCountryFocusNode;
+  TextEditingController? farmCountryTextController;
+  String? Function(BuildContext, String?)? farmCountryTextControllerValidator;
   // State field(s) for farmPhone widget.
   FocusNode? farmPhoneFocusNode;
   TextEditingController? farmPhoneTextController;
@@ -46,6 +50,9 @@ class AddAFarmModel extends FlutterFlowModel<AddAFarmWidget> {
   // State field(s) for numberEmployees widget.
   String? numberEmployeesValue;
   FormFieldController<String>? numberEmployeesValueController;
+  // State field(s) for prefferedUnit widget.
+  String? prefferedUnitValue;
+  FormFieldController<String>? prefferedUnitValueController;
 
   @override
   void initState(BuildContext context) {}
@@ -66,6 +73,9 @@ class AddAFarmModel extends FlutterFlowModel<AddAFarmWidget> {
 
     farmPostalFocusNode?.dispose();
     farmPostalTextController?.dispose();
+
+    farmCountryFocusNode?.dispose();
+    farmCountryTextController?.dispose();
 
     farmPhoneFocusNode?.dispose();
     farmPhoneTextController?.dispose();

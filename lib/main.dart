@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = adminMicroSupabaseUserStream()
+    userStream = sproutifyMicroAdminSupabaseUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
@@ -103,7 +103,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'adminMicro',
+      title: 'Sproutify Micro Admin',
       scrollBehavior: MyAppScrollBehavior(),
       localizationsDelegates: [
         FFLocalizationsDelegate(),

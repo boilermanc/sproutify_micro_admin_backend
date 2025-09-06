@@ -26,3 +26,11 @@ export '/pages/auth/add_profile_info/add_profile_info_widget.dart'
 export '/pages/auth/add_a_farm/add_a_farm_widget.dart' show AddAFarmWidget;
 export '/pages/auth/final_welcome/final_welcome_widget.dart'
     show FinalWelcomeWidget;
+export '/pages/add_recipe/add_recipe_widget.dart' show AddRecipeWidget;
+export '/pages/add_steps_to_recipe/add_steps_to_recipe_widget.dart'
+    show AddStepsToRecipeWidget;
+export '/api_test/api_test_widget.dart' show ApiTestWidget;
+export '/pages/view_recipes/view_recipes_widget.dart' show ViewRecipesWidget;
+export '/pages/view_steps/view_steps_widget.dart' show ViewStepsWidget;
+export '/pages/edit_steps/edit_steps_widget.dart' show EditStepsWidget;
+export '/test_batch/test_batch_widget.dart' show TestBatchWidget;

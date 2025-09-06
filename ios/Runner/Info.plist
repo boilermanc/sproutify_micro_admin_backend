@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>adminMicro</string>
+	<string>sproutifyMicroAdmin</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>adminMicro</string>
+	<string>sproutifyMicroAdmin</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleLocalizations</key>
@@ -31,10 +31,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>adminmicro.com</string>
+        <string>sproutifymicroadmin.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>adminmicro</string>
+        <string>sproutifymicroadmin</string>
         </array>
         </dict>
     </array>

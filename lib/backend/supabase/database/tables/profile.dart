@@ -14,6 +14,9 @@ class ProfileRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => ProfileTable();
 
+  String get id => getField<String>('id')!;
+  set id(String value) => setField<String>('id', value);
+
   String? get firstname => getField<String>('firstname');
   set firstname(String? value) => setField<String>('firstname', value);
 
@@ -32,17 +35,17 @@ class ProfileRow extends SupabaseDataRow {
   String? get postalcode => getField<String>('postalcode');
   set postalcode(String? value) => setField<String>('postalcode', value);
 
+  String? get country => getField<String>('country');
+  set country(String? value) => setField<String>('country', value);
+
   String? get phone => getField<String>('phone');
   set phone(String? value) => setField<String>('phone', value);
 
   String? get email => getField<String>('email');
   set email(String? value) => setField<String>('email', value);
 
-  int? get farmid => getField<int>('farmid');
-  set farmid(int? value) => setField<int>('farmid', value);
-
-  String get id => getField<String>('id')!;
-  set id(String value) => setField<String>('id', value);
+  String? get role => getField<String>('role');
+  set role(String? value) => setField<String>('role', value);
 
   String? get avatarUrl => getField<String>('avatar_url');
   set avatarUrl(String? value) => setField<String>('avatar_url', value);
@@ -53,9 +56,6 @@ class ProfileRow extends SupabaseDataRow {
   String? get farmUuid => getField<String>('farm_uuid');
   set farmUuid(String? value) => setField<String>('farm_uuid', value);
 
-  String? get country => getField<String>('country');
-  set country(String? value) => setField<String>('country', value);
-
-  bool? get isactive => getField<bool>('isactive');
-  set isactive(bool? value) => setField<bool>('isactive', value);
+  bool? get isActive => getField<bool>('is_active');
+  set isActive(bool? value) => setField<bool>('is_active', value);
 }

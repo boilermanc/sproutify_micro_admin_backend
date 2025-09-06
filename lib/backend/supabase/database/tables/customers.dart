@@ -26,8 +26,8 @@ class CustomersRow extends SupabaseDataRow {
   String? get email => getField<String>('email');
   set email(String? value) => setField<String>('email', value);
 
-  int? get farmid => getField<int>('farmid');
-  set farmid(int? value) => setField<int>('farmid', value);
+  String? get farmUuid => getField<String>('farm_uuid');
+  set farmUuid(String? value) => setField<String>('farm_uuid', value);
 
   String? get billingstreet => getField<String>('billingstreet');
   set billingstreet(String? value) => setField<String>('billingstreet', value);
@@ -67,9 +67,6 @@ class CustomersRow extends SupabaseDataRow {
   String? get contactname => getField<String>('contactname');
   set contactname(String? value) => setField<String>('contactname', value);
 
-  String? get farmUuid => getField<String>('farm_uuid');
-  set farmUuid(String? value) => setField<String>('farm_uuid', value);
-
   String? get billingContactFirstName =>
       getField<String>('billing_contact_first_name');
   set billingContactFirstName(String? value) =>
@@ -84,10 +81,31 @@ class CustomersRow extends SupabaseDataRow {
   set billingContactEmail(String? value) =>
       setField<String>('billing_contact_email', value);
 
-  String? get notes => getField<String>('notes');
-  set notes(String? value) => setField<String>('notes', value);
-
   String? get billingContactPhone => getField<String>('billing_contact_phone');
   set billingContactPhone(String? value) =>
       setField<String>('billing_contact_phone', value);
+
+  String? get notes => getField<String>('notes');
+  set notes(String? value) => setField<String>('notes', value);
+
+  String? get status => getField<String>('status');
+  set status(String? value) => setField<String>('status', value);
+
+  String? get customerType => getField<String>('customer_type');
+  set customerType(String? value) => setField<String>('customer_type', value);
+
+  String? get createdBy => getField<String>('created_by');
+  set createdBy(String? value) => setField<String>('created_by', value);
+
+  DateTime? get createdAt => getField<DateTime>('created_at');
+  set createdAt(DateTime? value) => setField<DateTime>('created_at', value);
+
+  String? get updatedBy => getField<String>('updated_by');
+  set updatedBy(String? value) => setField<String>('updated_by', value);
+
+  DateTime? get updatedAt => getField<DateTime>('updated_at');
+  set updatedAt(DateTime? value) => setField<DateTime>('updated_at', value);
+
+  DateTime? get deletedAt => getField<DateTime>('deleted_at');
+  set deletedAt(DateTime? value) => setField<DateTime>('deleted_at', value);
 }

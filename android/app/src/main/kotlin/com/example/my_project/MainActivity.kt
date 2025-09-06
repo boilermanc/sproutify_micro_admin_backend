@@ -1,4 +1,4 @@
-package com.mycompany.adminmicro
+package com.mycompany.sproutifymicroadmin
 
 import io.flutter.embedding.android.FlutterActivity
 

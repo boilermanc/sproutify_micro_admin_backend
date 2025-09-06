@@ -462,7 +462,7 @@ class _MainNotificationsWidgetState extends State<MainNotificationsWidget> {
                                                             'lastname':
                                                                 listViewNewProfileRow
                                                                     .lastName,
-                                                            'isactive': true,
+                                                            'is_active': true,
                                                             'farm_uuid':
                                                                 FFAppState()
                                                                     .farmUUID,
@@ -521,7 +521,7 @@ class _MainNotificationsWidgetState extends State<MainNotificationsWidget> {
                                                       text: FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'ytfe9gjn' /* Activate */,
+                                                        'obdwngjb' /* Activate */,
                                                       ),
                                                       options: FFButtonOptions(
                                                         height: 30.0,

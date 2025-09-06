@@ -24,15 +24,42 @@ class ProfileWithFarmRow extends SupabaseDataRow {
   String? get lastname => getField<String>('lastname');
   set lastname(String? value) => setField<String>('lastname', value);
 
+  String? get street => getField<String>('street');
+  set street(String? value) => setField<String>('street', value);
+
+  String? get city => getField<String>('city');
+  set city(String? value) => setField<String>('city', value);
+
+  String? get state => getField<String>('state');
+  set state(String? value) => setField<String>('state', value);
+
+  String? get postalcode => getField<String>('postalcode');
+  set postalcode(String? value) => setField<String>('postalcode', value);
+
+  String? get country => getField<String>('country');
+  set country(String? value) => setField<String>('country', value);
+
+  String? get phone => getField<String>('phone');
+  set phone(String? value) => setField<String>('phone', value);
+
   String? get email => getField<String>('email');
   set email(String? value) => setField<String>('email', value);
 
-  int? get farmid => getField<int>('farmid');
-  set farmid(int? value) => setField<int>('farmid', value);
+  String? get role => getField<String>('role');
+  set role(String? value) => setField<String>('role', value);
 
-  String? get farmname => getField<String>('farmname');
-  set farmname(String? value) => setField<String>('farmname', value);
+  String? get avatarUrl => getField<String>('avatar_url');
+  set avatarUrl(String? value) => setField<String>('avatar_url', value);
+
+  String? get bio => getField<String>('bio');
+  set bio(String? value) => setField<String>('bio', value);
 
   String? get farmUuid => getField<String>('farm_uuid');
   set farmUuid(String? value) => setField<String>('farm_uuid', value);
+
+  bool? get isActive => getField<bool>('is_active');
+  set isActive(bool? value) => setField<bool>('is_active', value);
+
+  String? get farmname => getField<String>('farmname');
+  set farmname(String? value) => setField<String>('farmname', value);
 }

@@ -16,11 +16,11 @@ class FetchUsersFarmIDCall {
     return ApiManager.instance.makeApiCall(
       callName: 'FetchUsersFarmID',
       apiUrl:
-          'https://hbblyniohzgkdumcawun.supabase.co/rest/v1/profile_with_farm?id=eq.${userID}&select=*',
+          'https://rmjyfdmwnmaerthcoosq.supabase.co/rest/v1/profile_with_farm?id=eq.${userID}&select=*',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhiYmx5bmlvaHpna2R1bWNhd3VuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NjQ3NjQsImV4cCI6MjAyMTM0MDc2NH0.F6xR4qysXA4Oyou1KT46z5Sbqk6yx3wSZBSMoyAS824',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtanlmZG13bm1hZXJ0aGNvb3NxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0ODgxNTMsImV4cCI6MjAyNTA2NDE1M30.qqErJJQlxHpwZWRHWLDouGWLHIaYn09R-EZdot8ZqDg',
       },
       params: {},
       returnBody: true,
@@ -56,6 +56,14 @@ class FetchUsersFarmIDCall {
         response,
         r'''$[:].farm_uuid''',
       ));
+  static String? farmRole(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].role''',
+      ));
+  static bool? isActive(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:].is_active''',
+      ));
 }
 
 class FetchVarietyNamesCall {
@@ -63,13 +71,13 @@ class FetchVarietyNamesCall {
     return ApiManager.instance.makeApiCall(
       callName: 'FetchVarietyNames',
       apiUrl:
-          'https://hbblyniohzgkdumcawun.supabase.co/rest/v1/varieties?select=*',
+          'https://rmjyfdmwnmaerthcoosq.supabase.co/rest/v1/varieties?select=*',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhiYmx5bmlvaHpna2R1bWNhd3VuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NjQ3NjQsImV4cCI6MjAyMTM0MDc2NH0.F6xR4qysXA4Oyou1KT46z5Sbqk6yx3wSZBSMoyAS824',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtanlmZG13bm1hZXJ0aGNvb3NxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0ODgxNTMsImV4cCI6MjAyNTA2NDE1M30.qqErJJQlxHpwZWRHWLDouGWLHIaYn09R-EZdot8ZqDg',
         'Authorization':
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhiYmx5bmlvaHpna2R1bWNhd3VuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NjQ3NjQsImV4cCI6MjAyMTM0MDc2NH0.F6xR4qysXA4Oyou1KT46z5Sbqk6yx3wSZBSMoyAS824',
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtanlmZG13bm1hZXJ0aGNvb3NxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk0ODgxNTMsImV4cCI6MjAyNTA2NDE1M30.qqErJJQlxHpwZWRHWLDouGWLHIaYn09R-EZdot8ZqDg',
       },
       params: {},
       returnBody: true,
@@ -88,6 +96,51 @@ class FetchVarietyNamesCall {
       ) as List?)
           ?.withoutNulls
           .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? quantityGrams(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].seed_quantity_grams''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? quantityOz(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].seed_quantity_ounces''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? microImage(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].imageurl''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? microDescription(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].description''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? varietyID(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].varietyid''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
 }

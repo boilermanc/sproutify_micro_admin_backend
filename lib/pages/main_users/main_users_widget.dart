@@ -942,7 +942,7 @@ class _MainUsersWidgetState extends State<MainUsersWidget> {
                                                 Stack(
                                                   children: [
                                                     if (listViewProfileRow
-                                                            .isactive ==
+                                                            .isActive ==
                                                         true)
                                                       InkWell(
                                                         splashColor:
@@ -959,7 +959,8 @@ class _MainUsersWidgetState extends State<MainUsersWidget> {
                                                           await ProfileTable()
                                                               .update(
                                                             data: {
-                                                              'isactive': false,
+                                                              'is_active':
+                                                                  false,
                                                             },
                                                             matchingRows:
                                                                 (rows) => rows
@@ -1037,7 +1038,7 @@ class _MainUsersWidgetState extends State<MainUsersWidget> {
                                                         ),
                                                       ),
                                                     if (listViewProfileRow
-                                                            .isactive ==
+                                                            .isActive ==
                                                         false)
                                                       Container(
                                                         decoration:

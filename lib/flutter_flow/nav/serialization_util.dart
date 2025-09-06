@@ -206,46 +206,52 @@ dynamic deserializeParam<T>(
       case ParamType.SupabaseRow:
         final data = json.decode(param) as Map<String, dynamic>;
         switch (T) {
-          case TraygrowthstagesRow:
-            return TraygrowthstagesRow(data);
-          case ProfileRow:
-            return ProfileRow(data);
-          case NewProfileRow:
-            return NewProfileRow(data);
-          case FarmsRow:
-            return FarmsRow(data);
-          case FarmVarietiesRow:
-            return FarmVarietiesRow(data);
-          case SeedingscheduleRow:
-            return SeedingscheduleRow(data);
+          case ViewTrayOrdersRow:
+            return ViewTrayOrdersRow(data);
+          case TrayStepsRow:
+            return TrayStepsRow(data);
           case VendorsRow:
             return VendorsRow(data);
-          case VarietiesRow:
-            return VarietiesRow(data);
-          case UsertraysRow:
-            return UsertraysRow(data);
-          case TrayDetailsViewRow:
-            return TrayDetailsViewRow(data);
-          case StandingordersRow:
-            return StandingordersRow(data);
-          case GrowthstepsRow:
-            return GrowthstepsRow(data);
-          case SeedingpagedataRow:
-            return SeedingpagedataRow(data);
-          case UseractionsRow:
-            return UseractionsRow(data);
-          case TasksRow:
-            return TasksRow(data);
-          case SeedbatchesRow:
-            return SeedbatchesRow(data);
+          case VarietiesViewRow:
+            return VarietiesViewRow(data);
+          case DebugLogsRow:
+            return DebugLogsRow(data);
+          case TrayCreationRequestsRow:
+            return TrayCreationRequestsRow(data);
+          case DailyTasksViewRow:
+            return DailyTasksViewRow(data);
           case CustomersRow:
             return CustomersRow(data);
-          case DailyLabelsRow:
-            return DailyLabelsRow(data);
+          case StepsInfoRow:
+            return StepsInfoRow(data);
+          case SeedbatchesRow:
+            return SeedbatchesRow(data);
+          case SeedbatchViewRow:
+            return SeedbatchViewRow(data);
           case ProfileWithFarmRow:
             return ProfileWithFarmRow(data);
-          case ActiveVarietiesForFarmViewRow:
-            return ActiveVarietiesForFarmViewRow(data);
+          case StepDescriptionsRow:
+            return StepDescriptionsRow(data);
+          case TraysRow:
+            return TraysRow(data);
+          case FarmsRow:
+            return FarmsRow(data);
+          case RecipesWithCreatorNameRow:
+            return RecipesWithCreatorNameRow(data);
+          case ProfileRow:
+            return ProfileRow(data);
+          case RecipesRow:
+            return RecipesRow(data);
+          case StepsRow:
+            return StepsRow(data);
+          case FarmVarietiesRow:
+            return FarmVarietiesRow(data);
+          case VarietiesRow:
+            return VarietiesRow(data);
+          case FarmTraysWithEmailRow:
+            return FarmTraysWithEmailRow(data);
+          case NewProfileRow:
+            return NewProfileRow(data);
           default:
             return null;
         }

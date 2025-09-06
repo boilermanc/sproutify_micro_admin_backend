@@ -46,4 +46,13 @@ class VendorsRow extends SupabaseDataRow {
 
   String? get notes => getField<String>('notes');
   set notes(String? value) => setField<String>('notes', value);
+
+  bool get isActive => getField<bool>('is_active')!;
+  set isActive(bool value) => setField<bool>('is_active', value);
+
+  String? get createdBy => getField<String>('created_by');
+  set createdBy(String? value) => setField<String>('created_by', value);
+
+  DateTime? get createdAt => getField<DateTime>('created_at');
+  set createdAt(DateTime? value) => setField<DateTime>('created_at', value);
 }

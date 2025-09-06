@@ -111,7 +111,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: RecentOrdersWidget.routePath,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'recentOrders')
-              : RecentOrdersWidget(),
+              : RecentOrdersWidget(
+                  orderList: params.getParam<ViewTrayOrdersRow>(
+                    'orderList',
+                    ParamType.SupabaseRow,
+                    isList: true,
+                  ),
+                ),
         ),
         FFRoute(
           name: MainProfileWidget.routeName,
@@ -243,6 +249,65 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: AddRecipeWidget.routeName,
+          path: AddRecipeWidget.routePath,
+          builder: (context, params) => AddRecipeWidget(
+            recipeID: params.getParam(
+              'recipeID',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: AddStepsToRecipeWidget.routeName,
+          path: AddStepsToRecipeWidget.routePath,
+          builder: (context, params) => AddStepsToRecipeWidget(
+            recipeID: params.getParam(
+              'recipeID',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ApiTestWidget.routeName,
+          path: ApiTestWidget.routePath,
+          builder: (context, params) => ApiTestWidget(),
+        ),
+        FFRoute(
+          name: ViewRecipesWidget.routeName,
+          path: ViewRecipesWidget.routePath,
+          builder: (context, params) => ViewRecipesWidget(),
+        ),
+        FFRoute(
+          name: ViewStepsWidget.routeName,
+          path: ViewStepsWidget.routePath,
+          builder: (context, params) => ViewStepsWidget(
+            recipeID: params.getParam(
+              'recipeID',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: EditStepsWidget.routeName,
+          path: EditStepsWidget.routePath,
+          builder: (context, params) => EditStepsWidget(
+            recipeID: params.getParam(
+              'recipeID',
+              ParamType.int,
+            ),
+            recipeName: params.getParam(
+              'recipeName',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: TestBatchWidget.routeName,
+          path: TestBatchWidget.routePath,
+          builder: (context, params) => TestBatchWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

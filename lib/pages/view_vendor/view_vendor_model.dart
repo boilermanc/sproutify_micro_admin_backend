@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/components/side_nav_widget.dart';
+import '/flutter_flow/flutter_flow_data_table.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -21,6 +22,9 @@ class ViewVendorModel extends FlutterFlowModel<ViewVendorWidget> {
 
   // Model for sideNav component.
   late SideNavModel sideNavModel;
+  // State field(s) for PaginatedDataTable widget.
+  final paginatedDataTableController =
+      FlutterFlowDataTableController<VendorsRow>();
 
   @override
   void initState(BuildContext context) {
@@ -30,5 +34,6 @@ class ViewVendorModel extends FlutterFlowModel<ViewVendorWidget> {
   @override
   void dispose() {
     sideNavModel.dispose();
+    paginatedDataTableController.dispose();
   }
 }

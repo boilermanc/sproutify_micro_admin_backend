@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/side_nav_widget.dart';
@@ -3164,112 +3165,47 @@ class _AddMicroBatchWidgetState extends State<AddMicroBatchWidget> {
                                         onPressed: () async {
                                           HapticFeedback.lightImpact();
                                           await SeedbatchesTable().insert({
-                                            'variety_name':
-                                                _model.dropDownVarietyValue,
-                                            'purchasedate':
-                                                supaSerialize<DateTime>(
-                                                    _model.datePicked1),
-                                            'totalprice':
-                                                valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController5.text),
-                                              0.00,
-                                            ),
-                                            'priceperounce':
-                                                valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController6.text),
-                                              0.00,
-                                            ),
-                                            'quantity': valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController7.text),
-                                              0.0,
-                                            ),
-                                            'batch_number': '0',
-                                            'is_active': valueOrDefault<bool>(
-                                              _model.switchValue,
-                                              false,
-                                            ),
+                                            'totalprice': double.tryParse(
+                                                _model.textController5.text),
+                                            'priceperounce': double.tryParse(
+                                                _model.textController6.text),
+                                            'quantity': double.tryParse(
+                                                _model.textController7.text),
+                                            'lot_number':
+                                                _model.textController1.text,
+                                            'is_active': true,
                                             'notes':
                                                 _model.textController14.text,
-                                            'germination_rate':
-                                                valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController4.text),
-                                              0.0,
-                                            ),
-                                            'vendor_name':
-                                                _model.dropDownVendorValue,
-                                            'lot_number':
-                                                valueOrDefault<String>(
-                                              _model.textController1.text,
-                                              '0',
-                                            ),
-                                            'origin': valueOrDefault<String>(
-                                              _model.textController3.text,
-                                              'US',
-                                            ),
-                                            'pure_seed': valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController9.text),
-                                              0.0,
-                                            ),
-                                            'weeds': valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController10.text),
-                                              0.0,
-                                            ),
-                                            'other': valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController11.text),
-                                              0.0,
-                                            ),
-                                            'inert': valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController12.text),
-                                              0.0,
-                                            ),
-                                            'noxious': valueOrDefault<String>(
-                                              _model.textController13.text,
-                                              '0',
-                                            ),
-                                            'sku': valueOrDefault<String>(
-                                              _model.textController2.text,
-                                              '0',
-                                            ),
+                                            'germination_rate': double.tryParse(
+                                                _model.textController4.text),
+                                            'origin':
+                                                _model.textController3.text,
+                                            'pure_seed': double.tryParse(
+                                                _model.textController9.text),
+                                            'weeds': double.tryParse(
+                                                _model.textController10.text),
+                                            'other': double.tryParse(
+                                                _model.textController11.text),
+                                            'inert': double.tryParse(
+                                                _model.textController12.text),
+                                            'noxious':
+                                                _model.textController13.text,
+                                            'sku': _model.textController2.text,
                                             'germ_date':
                                                 supaSerialize<DateTime>(
                                                     _model.datePicked2),
-                                            'hard_dormant':
-                                                valueOrDefault<double>(
-                                              double.tryParse(
-                                                  _model.textController8.text),
-                                              0.0,
-                                            ),
+                                            'hard_dormant': double.tryParse(
+                                                _model.textController8.text),
                                             'farm_uuid': FFAppState().farmUUID,
+                                            'created_by': currentUserUid,
+                                            'created_at':
+                                                supaSerialize<DateTime>(
+                                                    getCurrentTimestamp),
+                                            'updated_by': FFAppState().userID,
+                                            'updated_at':
+                                                supaSerialize<DateTime>(
+                                                    getCurrentTimestamp),
                                           });
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Batch Added',
-                                                style: TextStyle(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                ),
-                                              ),
-                                              duration:
-                                                  Duration(milliseconds: 4000),
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondary,
-                                            ),
-                                          );
-
-                                          context
-                                              .pushNamed(HomeWidget.routeName);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

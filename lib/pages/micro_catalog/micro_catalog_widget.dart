@@ -6,7 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/index.dart';
-import 'dart:async';
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -185,267 +185,407 @@ class _MicroCatalogWidgetState extends State<MicroCatalogWidget> {
                           ),
                         ),
                         Expanded(
-                          child: FutureBuilder<List<FarmVarietiesRow>>(
-                            future: (_model.requestCompleter ??= Completer<
-                                    List<FarmVarietiesRow>>()
-                                  ..complete(FarmVarietiesTable().queryRows(
-                                    queryFn: (q) => q
-                                        .eqOrNull(
-                                          'farm_uuid',
-                                          FFAppState().farmUUID,
-                                        )
-                                        .order('variety_name', ascending: true),
-                                  )))
-                                .future,
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                FutureBuilder<List<VarietiesViewRow>>(
+                                  future: VarietiesViewTable().queryRows(
+                                    queryFn: (q) =>
+                                        q.order('name', ascending: true),
                                   ),
-                                );
-                              }
-                              List<FarmVarietiesRow>
-                                  listViewFarmVarietiesRowList = snapshot.data!;
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<VarietiesViewRow>
+                                        containerVarietiesViewRowList =
+                                        snapshot.data!;
 
-                              return ListView.builder(
-                                padding: EdgeInsets.zero,
-                                shrinkWrap: true,
-                                scrollDirection: Axis.vertical,
-                                itemCount: listViewFarmVarietiesRowList.length,
-                                itemBuilder: (context, listViewIndex) {
-                                  final listViewFarmVarietiesRow =
-                                      listViewFarmVarietiesRowList[
-                                          listViewIndex];
-                                  return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 10.0),
-                                    child: Card(
-                                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      elevation: 4.0,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                    return Container(
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
                                       ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Row(
+                                      child: Builder(
+                                        builder: (context) {
+                                          final microCatalog =
+                                              containerVarietiesViewRowList
+                                                  .toList();
+
+                                          return Column(
                                             mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: Image.network(
-                                                      listViewFarmVarietiesRow
-                                                          .varietyImageUrl!,
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      fit: BoxFit.cover,
+                                            children: List.generate(
+                                                microCatalog.length,
+                                                (microCatalogIndex) {
+                                              final microCatalogItem =
+                                                  microCatalog[
+                                                      microCatalogIndex];
+                                              return Container(
+                                                width: double.infinity,
+                                                height: 100.0,
+                                                color: Color(0x00000000),
+                                                child: ExpandableNotifier(
+                                                  initialExpanded: false,
+                                                  child: ExpandablePanel(
+                                                    header: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          5.0),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .asset(
+                                                                      'assets/images/sproutify_micro_icon.png',
+                                                                      width:
+                                                                          50.0,
+                                                                      height:
+                                                                          50.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      microCatalogItem
+                                                                          .name,
+                                                                      'Micro Name',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.urbanist(
+                                                                            fontWeight:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                          ),
+                                                                          color:
+                                                                              Colors.black,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleLarge
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleLarge
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      20.0,
+                                                                      0.0,
+                                                                      20.0,
+                                                                      0.0),
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.isCreated0099 =
+                                                                  await FarmVarietiesTable()
+                                                                      .queryRows(
+                                                                queryFn: (q) => q
+                                                                    .eqOrNull(
+                                                                      'farm_uuid',
+                                                                      FFAppState()
+                                                                          .farmUUID,
+                                                                    )
+                                                                    .eqOrNull(
+                                                                      'variety_id',
+                                                                      microCatalogItem
+                                                                          .varietyid,
+                                                                    ),
+                                                              );
+                                                              if (_model.isCreated0099 !=
+                                                                      null &&
+                                                                  (_model.isCreated0099)!
+                                                                      .isNotEmpty) {
+                                                                if (microCatalogItem
+                                                                    .isActive!) {
+                                                                  await FarmVarietiesTable()
+                                                                      .update(
+                                                                    data: {
+                                                                      'is_active':
+                                                                          false,
+                                                                    },
+                                                                    matchingRows:
+                                                                        (rows) => rows
+                                                                            .eqOrNull(
+                                                                              'farm_uuid',
+                                                                              FFAppState().farmUUID,
+                                                                            )
+                                                                            .eqOrNull(
+                                                                              'variety_id',
+                                                                              microCatalogItem.varietyid,
+                                                                            ),
+                                                                  );
+                                                                } else {
+                                                                  await FarmVarietiesTable()
+                                                                      .update(
+                                                                    data: {
+                                                                      'is_active':
+                                                                          true,
+                                                                    },
+                                                                    matchingRows:
+                                                                        (rows) => rows
+                                                                            .eqOrNull(
+                                                                              'farm_uuid',
+                                                                              FFAppState().farmUUID,
+                                                                            )
+                                                                            .eqOrNull(
+                                                                              'variety_id',
+                                                                              microCatalogItem.varietyid,
+                                                                            ),
+                                                                  );
+                                                                }
+                                                              } else {
+                                                                await FarmVarietiesTable()
+                                                                    .insert({
+                                                                  'farm_uuid':
+                                                                      FFAppState()
+                                                                          .farmUUID,
+                                                                  'variety_id':
+                                                                      microCatalogItem
+                                                                          .varietyid,
+                                                                  'is_active':
+                                                                      true,
+                                                                });
+                                                              }
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            text: microCatalogItem
+                                                                        .isActive ==
+                                                                    false
+                                                                ? 'Not Active'
+                                                                : 'Active',
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 40.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: microCatalogItem
+                                                                      .isActive!
+                                                                  ? FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .ecru,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .plusJakartaSans(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleSmall
+                                                                            .fontStyle,
+                                                                      ),
+                                                              elevation: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(20.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Text(
-                                                      valueOrDefault<String>(
-                                                        listViewFarmVarietiesRow
-                                                            .varietyName,
-                                                        'Micro Name',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(
+                                                    collapsed: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      20.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              microCatalogItem
+                                                                  .description,
+                                                              'Description',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .plusJakartaSans(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: Color(
+                                                                      0x8A000000),
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMedium
+                                                                      .bodyMedium
                                                                       .fontWeight,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .headlineMedium
+                                                                      .bodyMedium
                                                                       .fontStyle,
                                                                 ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    expanded: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'd99yomue' /* Expanded body text */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .plusJakartaSans(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: Color(
+                                                                    0x8A000000),
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium
+                                                                    .bodyMedium
                                                                     .fontWeight,
                                                                 fontStyle: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineMedium
+                                                                    .bodyMedium
                                                                     .fontStyle,
                                                               ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(100.0,
-                                                                0.0, 0.0, 0.0),
-                                                    child: Stack(
-                                                      children: [
-                                                        if (listViewFarmVarietiesRow
-                                                                .isActive ==
-                                                            true)
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              HapticFeedback
-                                                                  .lightImpact();
-                                                              await FarmVarietiesTable()
-                                                                  .update(
-                                                                data: {
-                                                                  'is_active':
-                                                                      false,
-                                                                },
-                                                                matchingRows:
-                                                                    (rows) => rows
-                                                                        .eqOrNull(
-                                                                          'farm_uuid',
-                                                                          listViewFarmVarietiesRow
-                                                                              .farmUuid,
-                                                                        )
-                                                                        .eqOrNull(
-                                                                          'variety_id',
-                                                                          listViewFarmVarietiesRow
-                                                                              .varietyId,
-                                                                        ),
-                                                              );
-                                                              safeSetState(() =>
-                                                                  _model.requestCompleter =
-                                                                      null);
-                                                              await _model
-                                                                  .waitForRequestCompleted();
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .check_box_outlined,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
-                                                          ),
-                                                        if (listViewFarmVarietiesRow
-                                                                .isActive ==
-                                                            false)
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              HapticFeedback
-                                                                  .lightImpact();
-                                                              await FarmVarietiesTable()
-                                                                  .update(
-                                                                data: {
-                                                                  'is_active':
-                                                                      true,
-                                                                },
-                                                                matchingRows:
-                                                                    (rows) => rows
-                                                                        .eqOrNull(
-                                                                          'variety_id',
-                                                                          listViewFarmVarietiesRow
-                                                                              .varietyId,
-                                                                        )
-                                                                        .eqOrNull(
-                                                                          'farm_uuid',
-                                                                          listViewFarmVarietiesRow
-                                                                              .farmUuid,
-                                                                        ),
-                                                              );
-                                                              safeSetState(() =>
-                                                                  _model.requestCompleter =
-                                                                      null);
-                                                              await _model
-                                                                  .waitForRequestCompleted();
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .check_box_outline_blank,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 24.0,
-                                                            ),
-                                                          ),
+                                                        ),
                                                       ],
                                                     ),
+                                                    theme: ExpandableThemeData(
+                                                      tapHeaderToExpand: true,
+                                                      tapBodyToExpand: false,
+                                                      tapBodyToCollapse: false,
+                                                      headerAlignment:
+                                                          ExpandablePanelHeaderAlignment
+                                                              .center,
+                                                      hasIcon: true,
+                                                    ),
                                                   ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [],
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [],
-                                          ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [],
-                                          ),
-                                        ],
+                                                ),
+                                              );
+                                            }),
+                                          );
+                                        },
                                       ),
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                          ),
-                        ),
-                        Container(
-                          width: 100.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],

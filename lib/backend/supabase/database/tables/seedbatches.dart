@@ -30,8 +30,8 @@ class SeedbatchesRow extends SupabaseDataRow {
   double? get quantity => getField<double>('quantity');
   set quantity(double? value) => setField<double>('quantity', value);
 
-  String? get batchNumber => getField<String>('batch_number');
-  set batchNumber(String? value) => setField<String>('batch_number', value);
+  String? get lotNumber => getField<String>('lot_number');
+  set lotNumber(String? value) => setField<String>('lot_number', value);
 
   bool? get isActive => getField<bool>('is_active');
   set isActive(bool? value) => setField<bool>('is_active', value);
@@ -42,15 +42,6 @@ class SeedbatchesRow extends SupabaseDataRow {
   double? get germinationRate => getField<double>('germination_rate');
   set germinationRate(double? value) =>
       setField<double>('germination_rate', value);
-
-  String? get varietyName => getField<String>('variety_name');
-  set varietyName(String? value) => setField<String>('variety_name', value);
-
-  String? get vendorName => getField<String>('vendor_name');
-  set vendorName(String? value) => setField<String>('vendor_name', value);
-
-  String? get lotNumber => getField<String>('lot_number');
-  set lotNumber(String? value) => setField<String>('lot_number', value);
 
   String? get origin => getField<String>('origin');
   set origin(String? value) => setField<String>('origin', value);
@@ -81,4 +72,25 @@ class SeedbatchesRow extends SupabaseDataRow {
 
   String? get farmUuid => getField<String>('farm_uuid');
   set farmUuid(String? value) => setField<String>('farm_uuid', value);
+
+  String? get createdBy => getField<String>('created_by');
+  set createdBy(String? value) => setField<String>('created_by', value);
+
+  DateTime? get createdAt => getField<DateTime>('created_at');
+  set createdAt(DateTime? value) => setField<DateTime>('created_at', value);
+
+  String? get updatedBy => getField<String>('updated_by');
+  set updatedBy(String? value) => setField<String>('updated_by', value);
+
+  DateTime? get updatedAt => getField<DateTime>('updated_at');
+  set updatedAt(DateTime? value) => setField<DateTime>('updated_at', value);
+
+  int? get vendorid => getField<int>('vendorid');
+  set vendorid(int? value) => setField<int>('vendorid', value);
+
+  int? get varietyid => getField<int>('varietyid');
+  set varietyid(int? value) => setField<int>('varietyid', value);
+
+  String get status => getField<String>('status')!;
+  set status(String value) => setField<String>('status', value);
 }
